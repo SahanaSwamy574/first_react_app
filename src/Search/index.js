@@ -60,6 +60,19 @@ class App extends Component {
     const filteredCountries = countriesList.filter(country => {
       return country.name.toLowerCase().indexOf(search.toLowerCase()) !== -1;
     });
+cancelCourse = () => { 
+  this.setState({inputVal: {}});
+}
+
+render() {
+  return (
+    <form>
+      {[...Array(n)].map(
+        (item, i) => <input value={this.state.inputVal[i] || ""} onChange={this.handleInputChange.bind(this, i)} />
+      )}
+    </form>
+  );
+}
 
     return (
       <div className="flyout">
@@ -68,14 +81,7 @@ class App extends Component {
             <div className="row">
               <div className="col-12">
                 <center>
-                  <h3>
-                    <a
-                      href="https://www.youtube.com/watch?v=RM_nXOyHwN0"
-                      target="_blank"
-                    >
-                      Watch youtube demo here
-                    </a>
-                  </h3>
+                 
                 </center>
               </div>
               <div className="col">
@@ -84,6 +90,7 @@ class App extends Component {
                   icon="search"
                   onChange={this.onchange}
                 />
+                <input type="button" name="cancel" value="cancel" onClick={this.cancel}>
               </div>
               <div className="col" />
             </div>
