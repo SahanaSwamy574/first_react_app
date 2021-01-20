@@ -34,6 +34,14 @@ class App extends Component {
       <div className="col-md-3" style={{ marginTop: "20px" }}>
         <Card>
           <CardBody>
+                <label>
+                        <input
+                            type="checkbox"
+                            checked={ItemsChecked}
+                            onClick={this.selectItem.bind(this)}
+                        />Select all
+                    </label>
+                </header>
             <p className="">
               <img
                 src={blankImg}
